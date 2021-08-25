@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Hello hello = new Hello() bean하나당 객체하나 (같은 class로 여러개 id 가능)-->
+	<bean class="basic.Hello" id="hello"/>
+	<bean class="basic.Hello" id="hello2" lazy-init="true"/>
+	<!-- lazy-init="true" 객체생성시점 getBean을 받아올때가됨 -->
+
+</beans>

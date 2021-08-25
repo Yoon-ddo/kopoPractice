@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+	<!-- setter주입 -->
+	<bean class="di.homework.CalXml.MyCalculator2" id="mycal">
+		<!--  type="java.lang.Integer" -->
+		<property name="firstNum" value="10" />
+		<property name="secondNum" value="3" />
+
+	</bean>
+	<bean class="di.homework.CalXml.Calculator2" id="cal2" >
+		<property name="mycal2" ref="mycal"/>
+	</bean>
+	
+</beans>

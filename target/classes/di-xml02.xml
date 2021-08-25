@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean class="di.xml02.HankookTire" id="hankook" />
+	<bean class="di.xml02.KumhoTire" id="kumho" />
+	<bean class="di.xml02.Car" id="car">
+		<!--  생성자 주입을 하겠다는 의미  -->
+		<constructor-arg ref="hankook" />
+	</bean>
+	
+	<bean class="di.xml02.Car" id="car2">
+		<!-- new Car(new HankookTire(), new KumhoTire()) -->
+		<constructor-arg ref="hankook"/>
+		<constructor-arg ref="kumho"/>
+	</bean>
+	
+	<bean class="di.xml02.Car" id="car3">
+		<!-- new Car(Tire, String)  
+		- ref : 이미만들어진 객체삽입, value : 상수값 삽입 
+		  바꿔써도 알아서 타입매칭해주지만 위험한 방법이다. 
+		  index 속성으로 순서를 제어할수도 있다.-->
+		<constructor-arg ref="kumho" index="0"/>
+		<constructor-arg value="hello" index="1"/>
+	</bean>
+	
+	
+</beans>
